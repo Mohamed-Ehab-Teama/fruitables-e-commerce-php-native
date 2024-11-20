@@ -1,0 +1,142 @@
+:root {
+    --primary-green: #82b440;
+    --secondary-orange: #ffa037;
+    --light-gray: #f8f9fa;
+    --text-dark: #2b2b2b;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-header {
+    background-color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    max-height: 40px;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.container.auth-container {
+    max-width: 500px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-label {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.form-control {
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.2rem rgba(130, 180, 64, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #6f9937;
+    transform: translateY(-2px);
+}
+
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.feature-item i {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item h4 {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.feature-item p {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.signup-link a {
+    color: var(--secondary-orange);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link a:hover {
+    color: #e88f1f;
+}
+
+@media (max-width: 768px) {
+    .features-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container.auth-container {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-section {
+        grid-template-columns: 1fr;
+    }
+}
