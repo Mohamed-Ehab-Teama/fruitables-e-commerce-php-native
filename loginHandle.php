@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         if ( $row['is_admin'] )
         {
             $_SESSION['admin'] = true;
-            header('location:dashboard.php');
+            header('location:./dashboard/index.php');
             die;
         }
         else{
