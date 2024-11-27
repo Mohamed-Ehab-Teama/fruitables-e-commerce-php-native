@@ -28,7 +28,7 @@
     <header class="auth-header">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <a href="index.html" class="navbar-brand"><h1 class="text-primary display-6">Fruitables</h1></a>
+                <a href="index.php" class="navbar-brand"><h1 class="text-primary display-6">Fruitables</h1></a>
             </div>
         </div>
     </header>

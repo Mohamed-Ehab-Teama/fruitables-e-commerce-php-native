@@ -58,8 +58,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
         $_SESSION['login'] = true;
         $_SESSION['user_id'] = $row['id'];
-        header('location:index.html');
-        die;
+
+        if ( $row['is_admin'] )
+        {
+            $_SESSION['admin'] = true;
+            header('location:dashboard.php');
+            die;
+        }
+        else{
+            header('location:index.php');
+            die;
+        }
 
     }else{
         $_SESSION['error'] = " Incorrect Inputs ";
