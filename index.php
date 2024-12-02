@@ -134,7 +134,7 @@ require_once './layouts/header.php';
                     <ul class="nav nav-pills d-inline-flex text-center mb-5">
                         <li class="nav-item">
                             <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
-                                <span class="text-dark" style="width: 130px;">All Products</span>
+                                <span class="text-dark" style="width: 110px;">All Products</span>
                             </a>
                         </li>
 
@@ -147,7 +147,7 @@ require_once './layouts/header.php';
                         ?>
                                     <li class="nav-item">
                                         <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                                            <span class="text-dark" style="width: 130px;">
+                                            <span class="text-dark" style="width: 110px;">
                                                 <?php echo $row['category']; ?>
                                             </span>
                                         </a>
@@ -157,7 +157,7 @@ require_once './layouts/header.php';
                                 ?>
                                     <li class="nav-item">
                                         <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                                            <span class="text-dark" style="width: 130px;">
+                                            <span class="text-dark" style="width: 110px;">
                                                 <?php echo $row['category']; ?>
                                             </span>
                                         </a>
@@ -167,7 +167,17 @@ require_once './layouts/header.php';
                                 ?>
                                     <li class="nav-item">
                                         <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                                            <span class="text-dark" style="width: 130px;">
+                                            <span class="text-dark" style="width: 110px;">
+                                                <?php echo $row['category']; ?>
+                                            </span>
+                                        </a>
+                                    </li>
+                                <?php
+                                elseif ($row['category'] == 'Snacks'):
+                                ?>
+                                    <li class="nav-item">
+                                        <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-6">
+                                            <span class="text-dark" style="width: 110px;">
                                                 <?php echo $row['category']; ?>
                                             </span>
                                         </a>
@@ -177,7 +187,7 @@ require_once './layouts/header.php';
                                 ?>
                                     <li class="nav-item">
                                         <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                                            <span class="text-dark" style="width: 130px;">
+                                            <span class="text-dark" style="width: 110px;">
                                                 <?php echo $row['category']; ?>
                                             </span>
                                         </a>
@@ -394,6 +404,46 @@ require_once './layouts/header.php';
                                 ?>
 
                                 <!-- ------------------------------------- End of Get All Meat from Database -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-6" class="tab-pane fade show p-0">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <div class="row g-4">
+
+                                <!-- -------------------------------------  Get All Snacks from Database -->
+                                <?php
+                                $result = get_all_records_from_two_tables_on_check($connection, 'categories', 'products', 'categories.id', 'products.category_id', 'category', 'Snacks');
+                                if ($result):
+                                    while ($row = mysqli_fetch_assoc($result)):
+                                ?>
+
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                            <div class="rounded position-relative fruite-item">
+                                                <div class="fruite-img">
+                                                    <?php echo "<img src='data:image/jpeg;base64," . base64_encode($row['image']) . "' alt='{$row['product']}' class='img-fluid w-100 rounded-top'>"; ?>
+                                                </div>
+                                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"> <?php echo $row['category']; ?> </div>
+                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                    <h4> <?php echo $row['product']; ?> </h4>
+                                                    <p> <?php echo $row['description']; ?> </p>
+                                                    <div class="d-flex justify-content-between flex-lg-wrap">
+                                                        <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
+                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                <?php
+                                    endwhile;
+                                endif;
+                                ?>
+                                <!-- ------------------------------------- End of Get All Snacks from Database -->
+
 
                             </div>
                         </div>
@@ -861,6 +911,6 @@ require_once './layouts/header.php';
 
 
 <!-- Footer Start -->
- <?php
-    require_once './layouts/footer.php';
- ?>
+<?php
+require_once './layouts/footer.php';
+?>
