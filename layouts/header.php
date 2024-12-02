@@ -76,6 +76,12 @@
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <?php if ( isset($_SESSION['user_id']) ): ?>
+                            <a href="logout.php" class="nav-item nav-link">Log Out</a>
+                        <?php endif; ?>
+                        <?php if ( !isset($_SESSION['user_id']) ): ?>
+                            <a href="login.php" class="nav-item nav-link">Login</a>
+                        <?php endif; ?>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
@@ -83,7 +89,7 @@
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                         </a>
-                        <a href="#" class="my-auto">
+                        <a href="dashboard/index.php" class="my-auto">
                             <i class="fas fa-user fa-2x"></i>
                         </a>
                     </div>
