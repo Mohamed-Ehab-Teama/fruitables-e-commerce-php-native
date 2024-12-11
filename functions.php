@@ -1,6 +1,9 @@
 <?php
 require_once './connection.php';
 
+$user_id = $_SESSION['user_id'];
+
+
 function get_all_records ( $connection,  $table ) {
     $sql = " SELECT * FROM $table ";
     return mysqli_query($connection, $sql);
@@ -29,7 +32,8 @@ function get_all_records_from_two_tables_on_check ( $connection, $table1 , $tabl
 
 
 function get_number_of_cart_elements ($connection){
-    $sql = "SELECT COUNT(*) as count FROM cart";
+    global $user_id;
+    $sql = "SELECT COUNT(*) as count FROM cart WHERE user_id = '$user_id' ";
     return mysqli_query ( $connection, $sql );
 }
 

@@ -30,8 +30,8 @@
             <a href="./index.php" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i> Dashboard </a>
             <a href="./categories.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Categories </a>
             <a href="./products.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Producs </a>
-            <a href="" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Orders </a>
-            <a href="" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Users </a>
+            <a href="./orders.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Orders </a>
+            <a href="./users.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Users </a>
         </div>
     </nav>
 </div>

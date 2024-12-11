@@ -40,11 +40,19 @@ require_once './layouts/header.php';
 <div class="container-fluid page-header py-5">
     <h1 class="text-center text-white display-6">Cart</h1>
 
-    <?php if (isset($_GET['error'])): ?>
+    <?php if (isset($_SESSION['success'])): ?>
         <div class="alert alert-ganger">
             <?php
-            echo $_GET['error'] ?? '';
-            unset($_GET['error']);
+            echo $_SESSION['success'] ;
+            unset($_SESSION['success']);
+            ?>
+        </div>
+    <?php endif; ?>
+    <?php if (isset($_SESSION['error'])): ?>
+        <div class="alert alert-ganger">
+            <?php
+            echo $_SESSION['error'] ;
+            unset($_SESSION['error']);
             ?>
         </div>
     <?php endif; ?>
@@ -67,8 +75,8 @@ require_once './layouts/header.php';
                     <tr>
                         <th scope="col">Product Name</th>
                         <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Total</th>
+                        <!-- <th scope="col">Quantity</th>
+                        <th scope="col">Total</th> -->
                         <th scope="col">Handle</th>
                     </tr>
                 </thead>
@@ -76,7 +84,7 @@ require_once './layouts/header.php';
 
                     <!-- Get Cart Data From DB -->
                     <?php
-                    $res = get_all_records($connection, 'cart');
+                    $res = get_all_records_from_column($connection, 'cart', 'user_id', $user_id);
                     if ($res):
                         while ($row = mysqli_fetch_assoc($res)):
                     ?>
@@ -87,7 +95,7 @@ require_once './layouts/header.php';
                                 <td>
                                     <p class="mb-0 mt-4"> <?php echo $row['price']; ?> </p>
                                 </td>
-                                <td>
+                                <!-- <td>
                                     <div class="input-group quantity mt-4" style="width: 100px;">
                                         <div class="input-group-btn">
                                             <button class="btn btn-sm btn-minus rounded-circle bg-light border">
@@ -104,10 +112,12 @@ require_once './layouts/header.php';
                                 </td>
                                 <td>
                                     <p class="mb-0 mt-4"> <?php echo $row['price'] ?> </p>
-                                </td>
+                                </td> -->
                                 <td>
                                     <button class="btn btn-md rounded-circle bg-light border mt-4">
-                                        <i class="fa fa-times text-danger"></i>
+                                        <a href="deleteCartItem.php?id=<?php echo $row['id']; ?>">
+                                            <i class="fa fa-times text-danger"></i>
+                                        </a>
                                     </button>
                                 </td>
 
@@ -125,9 +135,9 @@ require_once './layouts/header.php';
         </div> -->
         <div class="row g-4 justify-content-end">
             <!-- Get Total Price From Database -->
-            <?php 
-                $res = get_cart_total($connection);
-                $row = mysqli_fetch_assoc($res); 
+            <?php
+            $res = get_cart_total($connection);
+            $row = mysqli_fetch_assoc($res);
             ?>
             <div class="col-8"></div>
             <div class="col-sm-8 col-md-7 col-lg-6 col-xl-4">
@@ -151,7 +161,7 @@ require_once './layouts/header.php';
                         <p class="mb-0 pe-4"> <?php echo $row['total']; ?> </p>
                     </div>
                     <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">
-                        <a href="">Proceed Checkout</a>
+                        <a href="completeOrder.php?total=<?php echo $row['total']; ?>"> Complete Order </a>
                     </button>
                 </div>
             </div>
