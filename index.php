@@ -228,7 +228,7 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -268,7 +268,7 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -309,7 +309,7 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -351,7 +351,7 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -392,7 +392,7 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -432,7 +432,7 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -526,7 +526,7 @@ require_once './layouts/header.php';
                             <p> <?php echo $row['description']; ?> </p>
                             <div class="d-flex justify-content-between flex-lg-wrap">
                                 <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
                         </div>
                     </div>
