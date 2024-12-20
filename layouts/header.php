@@ -2,8 +2,8 @@
 <?php
     require_once './functions.php';
 
-    $res = get_number_of_cart_elements($connection);
-    $res = mysqli_fetch_assoc($res);
+    // $res = get_number_of_cart_elements($connection);
+    // $res = mysqli_fetch_assoc($res);
 
 ?>
 
@@ -95,7 +95,7 @@
                         <a href="./cart.php" class="position-relative me-4 my-auto">
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">
-                                <?php echo( $res['count'] ); ?>
+                                <?php // echo( $res['count'] ); ?>
                             </span>
                         </a>
                         <a href="dashboard/index.php" class="my-auto">

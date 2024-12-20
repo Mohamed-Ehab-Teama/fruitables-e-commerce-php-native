@@ -35,10 +35,10 @@ require_once './layouts/header.php';
             <div class="col-md-12 col-lg-7">
                 <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
                 <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
-                <div class="position-relative mx-auto">
+                <!-- <div class="position-relative mx-auto">
                     <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Search">
                     <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Submit Now</button>
-                </div>
+                </div> -->
             </div>
             <div class="col-md-12 col-lg-5">
                 <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
@@ -461,20 +461,20 @@ require_once './layouts/header.php';
     <div class="container py-5">
         <div class="row g-4 justify-content-center">
             <div class="col-md-6 col-lg-4">
-                <a href="#">
+                <a>
                     <div class="service-item bg-secondary rounded border border-secondary">
                         <img src="img/featur-1.jpg" class="img-fluid rounded-top w-100" alt="">
                         <div class="px-4 rounded-bottom">
                             <div class="service-content bg-primary text-center p-4 rounded">
                                 <h5 class="text-white">Fresh Apples</h5>
-                                <h3 class="mb-0">20% OFF</h3>
+                                <h3 class="mb-0"> Tasty  </h3>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-md-6 col-lg-4">
-                <a href="#">
+                <a>
                     <div class="service-item bg-dark rounded border border-dark">
                         <img src="img/featur-2.jpg" class="img-fluid rounded-top w-100" alt="">
                         <div class="px-4 rounded-bottom">
@@ -487,13 +487,13 @@ require_once './layouts/header.php';
                 </a>
             </div>
             <div class="col-md-6 col-lg-4">
-                <a href="#">
+                <a>
                     <div class="service-item bg-primary rounded border border-primary">
                         <img src="img/featur-3.jpg" class="img-fluid rounded-top w-100" alt="">
                         <div class="px-4 rounded-bottom">
                             <div class="service-content bg-secondary text-center p-4 rounded">
                                 <h5 class="text-white">Exotic Vegitable</h5>
-                                <h3 class="mb-0">Discount 30$</h3>
+                                <h3 class="mb-0"> Avaliable Now </h3>
                             </div>
                         </div>
                     </div>
@@ -551,19 +551,19 @@ require_once './layouts/header.php';
                     <h1 class="display-3 text-white">Fresh Exotic Fruits</h1>
                     <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
                     <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p>
-                    <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
+                    <!-- <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a> -->
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="position-relative">
                     <img src="img/baner-1.png" class="img-fluid w-100 rounded" alt="">
-                    <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 140px; height: 140px; top: 0; left: 0;">
+                    <!-- <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 140px; height: 140px; top: 0; left: 0;">
                         <h1 style="font-size: 100px;">1</h1>
                         <div class="d-flex flex-column">
                             <span class="h2 mb-0">50$</span>
                             <span class="h4 text-muted mb-0">kg</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -573,7 +573,7 @@ require_once './layouts/header.php';
 
 
 <!-- Bestsaler Product Start -->
-<div class="container-fluid py-5">
+<!-- <div class="container-fluid py-5">
     <div class="container py-5">
         <div class="text-center mx-auto mb-5" style="max-width: 700px;">
             <h1 class="display-4">Bestseller Products</h1>
@@ -776,7 +776,7 @@ require_once './layouts/header.php';
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Bestsaler Product End -->
 
 
