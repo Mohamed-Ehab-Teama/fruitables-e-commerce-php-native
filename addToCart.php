@@ -13,11 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         // Fetch product details
         include './connection.php';
-        $result = mysqli_query($connection ,"SELECT * FROM products WHERE id = $productId");
+        $sql = "SELECT * FROM products WHERE id = '$productId' ";
+        $result = mysqli_query($connection , $sql);
         $product = mysqli_fetch_assoc($result);
 
         $cart[$productId] = [
-            'name' => $product['name'],
+            'name' => $product['product'],
             'price' => $product['price'],
             'quantity' => $quantity,
         ];
@@ -25,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Save the cart back to cookies
     setcookie('cart', json_encode($cart), time() + (86400 * 7), "/");
-    header("Location: cart.php");
+    header("Location:cart.php");
     exit;
 }
-?>
+

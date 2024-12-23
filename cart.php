@@ -6,10 +6,8 @@ $pageTitle = 'Fruitables - Shopping Cart ';
 
 require_once './layouts/header.php';
 
-// $res = get_cart_total($connection);
-// $row = mysqli_fetch_assoc($res);
-// var_dump($row);
-// die;
+$cart = isset($_COOKIE['cart']) ? json_decode($_COOKIE['cart'], true) : [];
+
 
 ?>
 
@@ -39,24 +37,6 @@ require_once './layouts/header.php';
 <!-- Single Page Header start -->
 <div class="container-fluid page-header py-5">
     <h1 class="text-center text-white display-6">Cart</h1>
-
-    <?php if (isset($_SESSION['success'])): ?>
-        <div class="alert alert-ganger">
-            <?php
-            echo $_SESSION['success'] ;
-            unset($_SESSION['success']);
-            ?>
-        </div>
-    <?php endif; ?>
-    <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-ganger">
-            <?php
-            echo $_SESSION['error'] ;
-            unset($_SESSION['error']);
-            ?>
-        </div>
-    <?php endif; ?>
-
     <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
         <li class="breadcrumb-item"><a href="#">Pages</a></li>
@@ -70,108 +50,99 @@ require_once './layouts/header.php';
 <div class="container-fluid py-5">
     <div class="container py-5">
         <div class="table-responsive">
+
+            <?php if (isset($_SESSION['success'])): ?>
+                <div class="alert alert-success text-center">
+                    <?php
+                    echo $_SESSION['success'];
+                    unset($_SESSION['success']);
+                    ?>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger text-center">
+                    <?php
+                    echo $_SESSION['error'];
+                    unset($_SESSION['error']);
+                    ?>
+                </div>
+            <?php endif; ?>
+
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Product Name</th>
                         <th scope="col">Price</th>
-                        <!-- <th scope="col">Quantity</th>
-                        <th scope="col">Total</th> -->
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
                         <th scope="col">Handle</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    <!-- Get Cart Data From DB -->
                     <?php
-                    $res = get_all_records_from_column($connection, 'cart', 'user_id', $user_id);
-                    if ($res):
-                        while ($row = mysqli_fetch_assoc($res)):
+                    if (empty($cart)) :
                     ?>
+
+                        <div class="alert alert-ganger text-center">
+                            You Cart Is Empty
+                        </div>
+                        <?php
+                    else:
+                        foreach ($cart as $productId => $item):
+                            $total = $item['price'] * $item['quantity'];
+                        ?>
+
+
                             <tr>
                                 <td>
-                                    <p class="mb-0 mt-4"> <?php echo $row['product']; ?> </p>
+                                    <p class="mb-0 mt-4"> <?php echo $item['name']; ?> </p>
                                 </td>
                                 <td>
-                                    <p class="mb-0 mt-4"> <?php echo $row['price']; ?> </p>
-                                </td>
-                                <!-- <td>
-                                    <div class="input-group quantity mt-4" style="width: 100px;">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div>
-                                        <input type="text" class="form-control form-control-sm text-center border-0" name="quantity" value="1">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
+                                    <p class="mb-0 mt-4"> <?php echo $item['price']; ?> </p>
                                 </td>
                                 <td>
-                                    <p class="mb-0 mt-4"> <?php echo $row['price'] ?> </p>
-                                </td> -->
+                                    <p class="mb-0 mt-4"> <?php echo $item['quantity']; ?> </p>
+                                </td>
                                 <td>
-                                    <button class="btn btn-md rounded-circle bg-light border mt-4">
-                                        <a href="deleteCartItem.php?id=<?php echo $row['id']; ?>">
-                                            <i class="fa fa-times text-danger"></i>
-                                        </a>
-                                    </button>
+                                    <p class="mb-0 mt-4"> <?php echo $total; ?> </p>
+                                </td>
+                                <td>
+                                    <form action='removeFromCart.php' method='POST' style='display:inline;'>
+                                        <input type='hidden' name='product_id' value='<?php echo $productId; ?>'>
+                                        <button type='submit' class="btn btn-danger" >Remove</button>
+                                    </form>
                                 </td>
 
                             </tr>
-
-                    <?php endwhile;
-                    endif; ?>
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
 
                 </tbody>
             </table>
         </div>
-        <!-- <div class="mt-5">
-            <input type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
-            <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon</button>
-        </div> -->
+
+
         <div class="row g-4 justify-content-end">
-            <!-- Get Total Price From Database -->
-            <?php
-            $res = get_cart_total($connection);
-            $row = mysqli_fetch_assoc($res);
-            ?>
             <div class="col-8"></div>
             <div class="col-sm-8 col-md-7 col-lg-6 col-xl-4">
                 <div class="bg-light rounded">
                     <div class="p-4">
                         <h1 class="display-6 mb-4">Cart <span class="fw-normal">Total</span></h1>
-                        <!-- <div class="d-flex justify-content-between mb-4">
-                            <h5 class="mb-0 me-4">Subtotal:</h5>
-                            <p class="mb-0">$96.00</p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h5 class="mb-0 me-4">Shipping</h5>
-                            <div class="">
-                                <p class="mb-0">Flat rate: $3.00</p>
-                            </div>
-                        </div>
-                        <p class="mb-0 text-end">Shipping to Ukraine.</p> -->
+                        <form action='checkout.php' method='POST'>
+                            <button type='submit' class="btn btn-success">Checkout</button>
+                        </form>
                     </div>
-                    <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
-                        <h5 class="mb-0 ps-4 me-4">Total</h5>
-                        <p class="mb-0 pe-4"> <?php echo $row['total']; ?> </p>
-                    </div>
-                    <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">
-                        <a href="completeOrder.php?total=<?php echo $row['total']; ?>"> Complete Order </a>
-                    </button>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Cart Page End -->
+    <!-- Cart Page End -->
 
 
-<!-- Footer Start -->
-<?php
-require_once './layouts/footer.php';
-?>
+    <!-- Footer Start -->
+    <?php
+    require_once './layouts/footer.php';
+    ?>
