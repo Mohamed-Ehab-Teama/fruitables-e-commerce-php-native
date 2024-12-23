@@ -54,7 +54,6 @@ require_once './layouts/sideBar.php';
                         <tr class="text-white text-center">
                             <th scope="col"> Order ID </th>
                             <th scope="col"> Owner </th>
-                            <th scope="col"> Total Price </th>
                             <th scope="col"> Made At </th>
                             <th scope="col">Action</th>
                         </tr>
@@ -68,8 +67,7 @@ require_once './layouts/sideBar.php';
                                 <tr>
                                     <td> <?php echo $order['id']; ?> </td>
                                     <td> <?php echo $order['name']; ?> </td>
-                                    <td> <?php echo $order['total_price'] . " $"; ?> </td>
-                                    <td> <?php echo $order['made_at'] ; ?> </td>
+                                    <td> <?php echo $order['order_date'] ; ?> </td>
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-primary" href="./orders/delete.php?id=<?php echo $order['id']; ?>">
                                             Delete
