@@ -1,22 +1,31 @@
 <?php
 
-require_once './connection.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $productId = $_POST['product_id'];
+    $quantity = $_POST['quantity'];
 
-$user_id = $_SESSION['user_id'];
+    // Initialize or retrieve the cart from cookies
+    $cart = isset($_COOKIE['cart']) ? json_decode($_COOKIE['cart'], true) : [];
 
-foreach ($_GET as $key => $value) {
-    $$key = $value;
+    // Update or add the item in the cart
+    if (isset($cart[$productId])) {
+        $cart[$productId]['quantity'] += $quantity;
+    } else {
+        // Fetch product details
+        include 'connection.php';
+        $result = $conn->query("SELECT * FROM products WHERE id = $productId");
+        $product = $result->fetch_assoc();
+
+        $cart[$productId] = [
+            'name' => $product['name'],
+            'price' => $product['price'],
+            'quantity' => $quantity,
+        ];
+    }
+
+    // Save the cart back to cookies
+    setcookie('cart', json_encode($cart), time() + (86400 * 7), "/");
+    header("Location: cart.php");
+    exit;
 }
-// $id
-// $product
-// $price
-
-
-$sql = " INSERT INTO cart (product, product_id, price, Total, user_id) VALUES ('$product', '$id', '$price', '$price', '$user_id') ";
-$res = mysqli_query( $connection, $sql );
-
-if ( $res ){
-    header('location:index.php');
-}else{
-    header('location:cart.php?error=Something Went Wrong');
-}
+?>

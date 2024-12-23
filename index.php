@@ -228,7 +228,13 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <form action='addToCart.php' method='POST'>
+                                                            <input type='hidden' name='product_id' value='<?php echo $row['id'] ?>'>
+                                                            <input type='number' class="input-group-text m-3" name='quantity' value='1' min='1'>
+                                                            <button type='submit' class="btn btn-outline-success">
+                                                                Add to Cart
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -268,7 +274,13 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <form action='addToCart.php' method='POST'>
+                                                            <input type='hidden' name='product_id' value='<?php echo $row['id'] ?>'>
+                                                            <input type='number' class="input-group-text m-3" name='quantity' value='1' min='1'>
+                                                            <button type='submit' class="btn btn-outline-success">
+                                                                Add to Cart
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -309,7 +321,13 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <form action='addToCart.php' method='POST'>
+                                                            <input type='hidden' name='product_id' value='<?php echo $row['id'] ?>'>
+                                                            <input type='number' class="input-group-text m-3" name='quantity' value='1' min='1'>
+                                                            <button type='submit' class="btn btn-outline-success">
+                                                                Add to Cart
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -351,7 +369,13 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <form action='addToCart.php' method='POST'>
+                                                            <input type='hidden' name='product_id' value='<?php echo $row['id'] ?>'>
+                                                            <input type='number' class="input-group-text m-3" name='quantity' value='1' min='1'>
+                                                            <button type='submit' class="btn btn-outline-success">
+                                                                Add to Cart
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -392,7 +416,13 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <form action='addToCart.php' method='POST'>
+                                                            <input type='hidden' name='product_id' value='<?php echo $row['id'] ?>'>
+                                                            <input type='number' class="input-group-text m-3" name='quantity' value='1' min='1'>
+                                                            <button type='submit' class="btn btn-outline-success">
+                                                                Add to Cart
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -432,7 +462,13 @@ require_once './layouts/header.php';
                                                     <p> <?php echo $row['description']; ?> </p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                                        <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <form action='addToCart.php' method='POST'>
+                                                            <input type='hidden' name='product_id' value='<?php echo $row['id'] ?>'>
+                                                            <input type='number' class="input-group-text m-3" name='quantity' value='1' min='1'>
+                                                            <button type='submit' class="btn btn-outline-success">
+                                                                Add to Cart
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -467,7 +503,7 @@ require_once './layouts/header.php';
                         <div class="px-4 rounded-bottom">
                             <div class="service-content bg-primary text-center p-4 rounded">
                                 <h5 class="text-white">Fresh Apples</h5>
-                                <h3 class="mb-0"> Tasty  </h3>
+                                <h3 class="mb-0"> Tasty </h3>
                             </div>
                         </div>
                     </div>
@@ -526,7 +562,13 @@ require_once './layouts/header.php';
                             <p> <?php echo $row['description']; ?> </p>
                             <div class="d-flex justify-content-between flex-lg-wrap">
                                 <p class="text-dark fs-5 fw-bold mb-0"> <?php echo $row['price']; ?>$ / kg</p>
-                                <a href="addToCart.php?id=<?php echo $row['id'];?>&product=<?php echo $row['product'];?>&price=<?php echo $row['price'];?>" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                <form action='addToCart.php' method='POST'>
+                                    <input type='hidden' name='product_id' value='<?php echo $row['id'] ?>'>
+                                    <input type='number' class="input-group-text m-3" name='quantity' value='1' min='1'>
+                                    <button type='submit' class="btn btn-outline-success">
+                                        Add to Cart
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
