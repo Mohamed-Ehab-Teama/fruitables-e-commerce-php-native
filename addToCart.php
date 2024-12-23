@@ -12,9 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cart[$productId]['quantity'] += $quantity;
     } else {
         // Fetch product details
-        include 'connection.php';
-        $result = $conn->query("SELECT * FROM products WHERE id = $productId");
-        $product = $result->fetch_assoc();
+        include './connection.php';
+        $result = mysqli_query($connection ,"SELECT * FROM products WHERE id = $productId");
+        $product = mysqli_fetch_assoc($result);
 
         $cart[$productId] = [
             'name' => $product['name'],
