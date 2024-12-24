@@ -32,6 +32,7 @@
             <a href="./products.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Producs </a>
             <a href="./orders.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Orders </a>
             <a href="./users.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Users </a>
+            <a href="./editAboutUs.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> About US Page </a>
         </div>
     </nav>
 </div>

@@ -70,16 +70,16 @@ require_once './functions.php';
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="index.php" class="nav-item nav-link active">Home</a>
-                        <a href="shop.php" class="nav-item nav-link">Shop</a>
+                        <!-- <a href="shop.php" class="nav-item nav-link">Shop</a> -->
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <a href="cart.php" class="dropdown-item">Cart</a>
-                                <a href="chackout.php" class="dropdown-item">Chackout</a>
-                                <a href="reviews.php" class="dropdown-item">Reviews</a>
+                                <!-- <a href="chackout.php" class="dropdown-item">Chackout</a>
+                                <a href="reviews.php" class="dropdown-item">Reviews</a> -->
                             </div>
                         </div>
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
+                        <!-- <a href="contact.php" class="nav-item nav-link">Contact</a> -->
                         <?php if (isset($_SESSION['user_id'])): ?>
                             <a href="logout.php" class="nav-item nav-link">Log Out</a>
                         <?php endif; ?>
